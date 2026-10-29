@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7fb">
+  <meta name="description" content="یاسین زارع؛ فعال در حوزه خدمات دولتی با تخصص اصلی برنامه‌نویسی.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fa_IR">
+  <meta property="og:title" content="یاسین زارع | رزومه حرفه‌ای و برنامه‌نویسی">
+  <meta property="og:description" content="یاسین زارع؛ فعال در حوزه خدمات دولتی با تخصص اصلی برنامه‌نویسی.">
+  <meta name="color-scheme" content="light dark">
+  <title>یاسین زارع | رزومه حرفه‌ای و برنامه‌نویسی</title>
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem('yasin-zare-theme');
+        const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.dataset.theme = saved === 'dark' || saved === 'light' ? saved : (systemDark ? 'dark' : 'light');
+      } catch (_) {
+        document.documentElement.dataset.theme = 'light';
+      }
+    })();
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --color-primary: #8267b5;
+      --color-primary-dark: #654b97;
+      --color-primary-light: #eee8f8;
+      --color-background: #f8f7fb;
+      --color-surface: #fff;
+      --color-surface-soft: #f1eff6;
+      --color-text: #211d2a;
+      --color-muted: #706a7b;
+      --color-border: rgba(50, 38, 72, .12);
+      --color-accent: #b3a1d5;
+      --shadow-soft: 0 20px 60px rgba(47, 34, 72, .11);
+      --glass-background: rgba(250, 249, 253, .78);
+      --header-height: 76px;
+      --content-width: 1180px;
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --ease-out: cubic-bezier(.2,.7,.2,1);
+      font-family: Vazir, Vazirmatn, system-ui, sans-serif;
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --color-primary: #b9a2e3;
+      --color-primary-dark: #d1bdf2;
+      --color-primary-light: #332942;
+      --color-background: #17151d;
+      --color-surface: #201d27;
+      --color-surface-soft: #282431;
+      --color-text: #f5f1fa;
+      --color-muted: #b1a9bc;
+      --color-border: rgba(230, 219, 247, .13);
+      --color-accent: #8c73b5;
+      --shadow-soft: 0 20px 60px rgba(0, 0, 0, .26);
+      --glass-background: rgba(31, 28, 39, .82);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-height) + 20px); }
+    body { margin: 0; color: var(--color-text); background: var(--color-background); font-family: Vazir, Vazirmatn, system-ui, sans-serif; line-height: 1.8; transition: background-color .28s ease, color .28s ease; overflow-x: clip; }
+    button, a { font: inherit; }
+    a { color: inherit; }
+    button { color: inherit; }
+    :focus-visible { outline: 3px solid var(--color-primary); outline-offset: 4px; }
+    ::selection { color: var(--color-text); background: var(--color-primary-light); }
+    .skip-link { position: fixed; z-index: 1000; inset-block-start: 8px; inset-inline-start: 8px; transform: translateY(-160%); background: var(--color-text); color: var(--color-background); padding: 10px 16px; border-radius: 10px; }
+    .skip-link:focus { transform: translateY(0); }
+    .scroll-progress { position: fixed; z-index: 1001; inset: 0 0 auto; height: 3px; pointer-events: none; }
+    .scroll-progress__bar { width: 100%; height: 100%; transform: scaleX(0); transform-origin: right center; background: linear-gradient(90deg, var(--color-primary), #b5a0dd); will-change: transform; }
+    .site-header { position: fixed; z-index: 100; inset: 0 0 auto; height: var(--header-height); transition: background .25s ease, border-color .25s ease, box-shadow .25s ease; border-bottom: 1px solid transparent; }
+    .site-header.is-scrolled { background: var(--glass-background); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-color: var(--color-border); box-shadow: 0 6px 24px rgba(36, 26, 55, .05); }
+    .header-inner { width: min(var(--content-width), calc(100% - 48px)); height: 100%; margin-inline: auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; white-space: nowrap; }
+    .brand-mark { width: 37px; height: 37px; display: grid; place-items: center; border-radius: 12px; color: #fff; background: var(--color-primary); font-size: 17px; font-weight: 800; box-shadow: 0 7px 20px rgba(130, 103, 181, .25); }
+    .brand-name { font-size: 15px; font-weight: 750; letter-spacing: -.02em; }
+    .header-actions { display: flex; align-items: center; gap: 20px; }
+    .nav-list { display: flex; gap: 8px; align-items: center; list-style: none; padding: 0; margin: 0; }
+    .nav-link { display: inline-flex; align-items: center; min-height: 42px; padding: 6px 13px; color: var(--color-muted); text-decoration: none; font-size: 13px; border-radius: 12px; transition: color .2s ease, background .2s ease; }
+    .nav-link:hover, .nav-link[aria-current="location"] { color: var(--color-primary-dark); background: var(--color-primary-light); }
+    .header-tools { display: flex; align-items: center; gap: 9px; }
+    .icon-button { width: 42px; height: 42px; border: 1px solid var(--color-border); border-radius: 14px; background: var(--color-surface); display: inline-grid; place-items: center; cursor: pointer; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+    .icon-button:hover { transform: translateY(-2px); border-color: var(--color-accent); }
+    .icon-button svg { width: 19px; height: 19px; }
+    .menu-toggle { display: none; }
+    .hero { position: relative; min-height: 100svh; background: var(--color-background); isolation: isolate; }
+    .hero__stage { position: sticky; inset-block-start: 0; height: 100svh; min-height: 620px; overflow: hidden; display: flex; align-items: center; }
+    .hero__canvas-wrap { position: absolute; inset: 0; z-index: -2; overflow: hidden; background: radial-gradient(ellipse at 22% 49%, rgba(174, 153, 211, .22), transparent 36%), radial-gradient(ellipse at 84% 16%, rgba(222, 214, 237, .36), transparent 32%), linear-gradient(120deg, var(--color-background), var(--color-surface-soft)); }
+    .hero__canvas-wrap::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, var(--color-background) 0%, color-mix(in srgb, var(--color-background) 84%, transparent) 34%, transparent 100%); pointer-events: none; }
+    #heroCanvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    .hero__ornament { position: absolute; z-index: 0; pointer-events: none; border: 1px solid rgba(130,103,181,.2); border-radius: 50%; }
+    .hero__ornament--one { width: 530px; height: 530px; inset-inline-end: 5%; top: 12%; }
+    .hero__ornament--two { width: 400px; height: 400px; inset-inline-end: calc(5% + 65px); top: calc(12% + 65px); border-style: dashed; opacity: .45; }
+    .hero__content { position: relative; width: min(var(--content-width), calc(100% - 48px)); margin-inline: auto; padding-top: var(--header-height); display: grid; grid-template-columns: minmax(0, 1fr) minmax(250px, .8fr); gap: 70px; align-items: center; }
+    .hero__copy { max-width: 600px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--color-primary-dark); font-size: 13px; font-weight: 700; letter-spacing: .01em; }
+    .eyebrow::before { content: ""; width: 26px; height: 1px; background: currentColor; }
+    .hero h1 { margin: 22px 0 12px; font-size: clamp(44px, 6.5vw, 82px); line-height: 1.16; letter-spacing: -.055em; font-weight: 780; }
+    .hero__role { margin: 0; color: var(--color-primary-dark); font-size: clamp(18px, 2vw, 23px); font-weight: 650; }
+    .hero__description { max-width: 500px; margin: 20px 0 0; color: var(--color-muted); font-size: clamp(15px, 1.4vw, 17px); line-height: 2; }
+    .hero__buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .button { display: inline-flex; justify-content: center; align-items: center; gap: 10px; min-height: 50px; padding: 10px 20px; border: 1px solid transparent; border-radius: 14px; text-decoration: none; font-size: 14px; font-weight: 700; transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease; }
+    .button:hover { transform: translateY(-2px); }
+    .button--primary { color: #fff; background: var(--color-primary-dark); box-shadow: 0 10px 24px rgba(101, 75, 151, .2); }
+    [data-theme="dark"] .button--primary { color: #21192b; background: var(--color-primary); }
+    .button--primary:hover { box-shadow: 0 14px 30px rgba(101, 75, 151, .28); }
+    .button--secondary { color: var(--color-text); border-color: var(--color-border); background: var(--glass-background); }
+    .button svg { width: 17px; height: 17px; }
+    .hero__visual-note { justify-self: end; align-self: end; margin-bottom: 8vh; padding: 14px 17px; border: 1px solid var(--color-border); border-radius: 16px; background: var(--glass-background); backdrop-filter: blur(10px); color: var(--color-muted); font-size: 12px; max-width: 220px; box-shadow: var(--shadow-soft); }
+    .hero__visual-note span { display: block; color: var(--color-text); font-size: 13px; font-weight: 700; }
+    .hero__scroll-hint { position: absolute; inset-inline-start: 50%; inset-block-end: 24px; transform: translateX(50%); display: flex; align-items: center; gap: 10px; color: var(--color-muted); font-size: 11px; }
+    .scroll-line { width: 28px; height: 1px; background: var(--color-primary); }
+    .section { position: relative; padding: clamp(80px, 11vw, 140px) 0; }
+    .section--profile { background: var(--color-surface); border-block: 1px solid var(--color-border); }
+    .container { width: min(var(--content-width), calc(100% - 48px)); margin-inline: auto; }
+    .section-grid { display: grid; grid-template-columns: minmax(220px, .7fr) minmax(0, 1.3fr); gap: clamp(40px, 9vw, 130px); align-items: start; }
+    .section-kicker { margin: 0 0 14px; color: var(--color-primary-dark); font-size: 12px; font-weight: 750; letter-spacing: .04em; }
+    .section-title { margin: 0; font-size: clamp(30px, 4vw, 48px); line-height: 1.35; letter-spacing: -.04em; }
+    .profile-copy { max-width: 680px; padding-top: 5px; }
+    .profile-copy p { margin: 0; font-size: clamp(18px, 2vw, 23px); line-height: 2; color: var(--color-muted); }
+    .profile-copy strong { color: var(--color-text); font-weight: 700; }
+    .focus-section { overflow: hidden; }
+    .focus-heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 46px; }
+    .focus-heading .section-title { max-width: 500px; }
+    .focus-heading p { max-width: 340px; margin: 0; color: var(--color-muted); font-size: 14px; }
+    .focus-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; background: var(--color-surface); box-shadow: var(--shadow-soft); }
+    .focus-item { position: relative; min-height: 240px; padding: clamp(26px, 4vw, 48px); display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; }
+    .focus-item + .focus-item { border-inline-start: 1px solid var(--color-border); }
+    .focus-item::after { content: ""; position: absolute; width: 200px; height: 200px; border: 1px solid var(--color-primary); border-radius: 50%; inset-inline-end: -95px; bottom: -125px; opacity: .23; box-shadow: 0 0 0 24px color-mix(in srgb, var(--color-primary) 7%, transparent), 0 0 0 48px color-mix(in srgb, var(--color-primary) 4%, transparent); pointer-events: none; }
+    .focus-index { color: var(--color-primary-dark); font-size: 12px; font-weight: 750; direction: ltr; text-align: right; }
+    .focus-item h3 { position: relative; z-index: 1; margin: 44px 0 0; font-size: clamp(23px, 3vw, 34px); line-height: 1.4; letter-spacing: -.03em; }
+    .focus-item--accent { background: linear-gradient(145deg, var(--color-primary-light), var(--color-surface)); }
+    .site-footer { border-top: 1px solid var(--color-border); padding: 25px 0; background: var(--color-surface); }
+    .footer-inner { width: min(var(--content-width), calc(100% - 48px)); margin-inline: auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--color-muted); font-size: 12px; }
+    .footer-name { color: var(--color-text); font-weight: 700; }
+    .back-to-top { position: fixed; z-index: 90; inset-inline-end: max(24px, calc((100vw - var(--content-width))/2)); bottom: 24px; width: 48px; height: 48px; border: 1px solid var(--color-border); border-radius: 16px; display: grid; place-items: center; background: var(--color-surface); color: var(--color-primary-dark); box-shadow: var(--shadow-soft); cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity .2s ease, visibility .2s ease, transform .2s ease; }
+    .back-to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-to-top svg { width: 19px; height: 19px; }
+    [data-reveal] { opacity: 1; transform: none; filter: none; }
+    .js-ready [data-reveal] { transition: opacity .65s var(--ease-out), transform .65s var(--ease-out), filter .65s var(--ease-out); }
+    .js-ready [data-reveal].is-pending { opacity: 0; transform: translateY(18px); filter: blur(3px); }
+    .js-ready [data-reveal].is-revealed { opacity: 1; transform: translateY(0); filter: blur(0); }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    @media (max-width: 760px) {
+      :root { --header-height: 68px; }
+      .header-inner, .container, .hero__content, .footer-inner { width: min(100% - 36px, var(--content-width)); }
+      .header-actions { gap: 10px; }
+      .menu-toggle { display: inline-grid; }
+      .nav-list { position: absolute; inset-inline: 18px; top: calc(100% + 8px); display: flex; flex-direction: column; align-items: stretch; gap: 4px; padding: 10px; border: 1px solid var(--color-border); border-radius: 18px; background: var(--color-surface); box-shadow: var(--shadow-soft); opacity: 0; visibility: hidden; transform: translateY(-6px); transition: .2s ease; }
+      .site-header.menu-open .nav-list { opacity: 1; visibility: visible; transform: translateY(0); }
+      .nav-link { width: 100%; padding-inline: 14px; }
+      .hero__stage { min-height: 620px; }
+      .hero__content { grid-template-columns: 1fr; gap: 20px; }
+      .hero__copy { max-width: 560px; }
+      .hero__visual-note { display: none; }
+      .hero__canvas-wrap::after { background: linear-gradient(90deg, color-mix(in srgb, var(--color-background) 95%, transparent), color-mix(in srgb, var(--color-background) 72%, transparent) 72%, color-mix(in srgb, var(--color-background) 55%, transparent)); }
+      .hero__ornament--one { width: 380px; height: 380px; inset-inline-end: -120px; top: 18%; }
+      .hero__ornament--two { width: 290px; height: 290px; inset-inline-end: -75px; top: calc(18% + 45px); }
+      .hero__scroll-hint { inset-inline-start: 50%; }
+      .section-grid { grid-template-columns: 1fr; gap: 22px; }
+      .focus-heading { align-items: start; flex-direction: column; margin-bottom: 28px; gap: 12px; }
+      .focus-grid { grid-template-columns: 1fr; }
+      .focus-item { min-height: 190px; }
+      .focus-item + .focus-item { border-inline-start: 0; border-top: 1px solid var(--color-border); }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 2px; }
+    }
+    @media (max-width: 430px) {
+      .brand-name { font-size: 13px; }
+      .brand { gap: 8px; }
+      .hero h1 { font-size: clamp(42px, 13vw, 58px); }
+      .hero__buttons { flex-direction: column; align-items: stretch; max-width: 270px; }
+      .button { width: 100%; }
+      .hero__description { font-size: 15px; }
+      .back-to-top { inset-inline-end: 16px; bottom: 16px; }
+    }
+    @media (hover: none), (pointer: coarse) {
+      .button:hover, .icon-button:hover { transform: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .hero__scroll-hint { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">رفتن به محتوای اصلی</a>
+  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar" id="scrollProgress"></div></div>
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="یاسین زارع، ابتدای صفحه">
+        <span class="brand-mark" aria-hidden="true">ی</span>
+        <span class="brand-name" data-bind="name">یاسین زارع</span>
+      </a>
+      <div class="header-actions">
+        <nav aria-label="ناوبری اصلی">
+          <ul class="nav-list" id="primaryNav">
+            <li><a class="nav-link" href="#profile">معرفی</a></li>
+            <li><a class="nav-link" href="#focus">حوزه‌های فعالیت</a></li>
+          </ul>
+        </nav>
+        <div class="header-tools">
+          <button class="icon-button" id="themeToggle" type="button" aria-label="تغییر حالت روشن و تاریک" title="تغییر پوسته">
+            <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+          </button>
+          <button class="icon-button menu-toggle" id="menuToggle" type="button" aria-label="بازکردن منو" aria-expanded="false" aria-controls="primaryNav">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="heroTitle">
+      <div class="hero__stage">
+        <div class="hero__canvas-wrap" aria-hidden="true">
+          <canvas id="heroCanvas"></canvas>
+          <span class="hero__ornament hero__ornament--one"></span>
+          <span class="hero__ornament hero__ornament--two"></span>
+        </div>
+        <div class="hero__content">
+          <div class="hero__copy">
+            <span class="eyebrow">رزومه و معرفی حرفه‌ای</span>
+            <h1 id="heroTitle" data-bind="name">یاسین زارع</h1>
+            <p class="hero__role" data-bind="headline">خدمات دولتی · برنامه‌نویسی</p>
+            <p class="hero__description" data-bind="intro">فعال در حوزه خدمات دولتی با تخصص اصلی برنامه‌نویسی.</p>
+            <div class="hero__buttons">
+              <a class="button button--primary" href="#focus">حوزه‌های فعالیت
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7"/></svg>
+              </a>
+              <a class="button button--secondary" href="#profile">معرفی کوتاه</a>
+            </div>
+          </div>
+          <div class="hero__visual-note" aria-hidden="true"><span>دقت در جزئیات</span>ترکیب نظم و نگاه فنی</div>
+        </div>
+        <div class="hero__scroll-hint" aria-hidden="true"><span class="scroll-line"></span><span>برای ادامه اسکرول کنید</span></div>
+      </div>
+    </section>
+    <section class="section section--profile" id="profile" aria-labelledby="profileTitle">
+      <div class="container section-grid">
+        <div data-reveal>
+          <p class="section-kicker">معرفی</p>
+          <h2 class="section-title" id="profileTitle">درباره یاسین</h2>
+        </div>
+        <div class="profile-copy" data-reveal>
+          <p><strong data-bind="name">یاسین زارع</strong> در حوزهٔ <strong data-bind="field">خدمات دولتی</strong> فعالیت می‌کند و تخصص اصلی او <strong data-bind="specialty">برنامه‌نویسی</strong> است.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section focus-section" id="focus" aria-labelledby="focusTitle">
+      <div class="container">
+        <div class="focus-heading" data-reveal>
+          <div><p class="section-kicker">حوزه‌های معرفی‌شده</p><h2 class="section-title" id="focusTitle">زمینهٔ فعالیت</h2></div>
+          <p>این معرفی بر پایهٔ اطلاعاتی است که تاکنون ارائه شده‌اند.</p>
+        </div>
+        <div class="focus-grid" id="focusGrid">
+          <article class="focus-item focus-item--accent" data-reveal>
+            <span class="focus-index" aria-hidden="true">01</span>
+            <h3 data-bind="field">خدمات دولتی</h3>
+          </article>
+          <article class="focus-item" data-reveal>
+            <span class="focus-index" aria-hidden="true">02</span>
+            <h3 data-bind="specialty">برنامه‌نویسی</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner"><span class="footer-name" data-bind="name">یاسین زارع</span><span>© <span id="currentYear">۲۰۲۶</span></span></div>
+  </footer>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="بازگشت به بالای صفحه" title="بازگشت به بالا">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 14 6-6 6 6"/></svg>
+  </button>
+  <script>
+    'use strict';
+    /*
+      تنظیمات مرکزی: برای افزودن فریم‌ها، فقط firstFile و lastFile را با نام واقعی فایل‌ها تکمیل کنید.
+      نمونهٔ الگو (صرفاً راهنما، نه فایل موجود): assets/hero/Hero_001.jpg تا assets/hero/Hero_050.jpg
+      فایل HTML استاتیک امکان فهرست‌کردن خودکار پوشه را ندارد؛ فریم‌های بین دو نام بررسی می‌شوند.
+    */
+    const siteConfig = {
+      identity: {
+        name: 'یاسین زارع',
+        headline: 'خدمات دولتی · برنامه‌نویسی',
+        field: 'خدمات دولتی',
+        specialty: 'برنامه‌نویسی',
+        intro: 'فعال در حوزه خدمات دولتی با تخصص اصلی برنامه‌نویسی.'
+      },
+      language: { code: 'fa', direction: 'rtl' },
+      theme: { storageKey: 'yasin-zare-theme', default: 'system' },
+      hero: {
+        sequence: {
+          directory: 'assets/hero/',
+          firstFile: '',
+          lastFile: '',
+          announcedCount: null,
+          format: '',
+          digits: null,
+          startNumber: null,
+          endNumber: null,
+          files: []
+        }
+      },
+      resume: { path: '' },
+      sections: [
+        { id: 'profile', label: 'معرفی', data: true },
+        { id: 'focus', label: 'حوزه‌های فعالیت', data: true }
+      ],
+      seo: {
+        title: 'یاسین زارع | رزومه حرفه‌ای و برنامه‌نویسی',
+        description: 'یاسین زارع؛ فعال در حوزه خدمات دولتی با تخصص اصلی برنامه‌نویسی.'
+      },
+      animation: { scrollDistancePerFrame: 34, minSequenceScroll: 900, maxSequenceScroll: 5200, cacheLimit: 9 }
+    };
+
+    const $ = (selector, root = document) => root.querySelector(selector);
+    const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function bindSiteData() {
+      document.title = siteConfig.seo.title;
+      const description = $('meta[name="description"]');
+      if (description) description.content = siteConfig.seo.description;
+      $$('[data-bind]').forEach(node => {
+        const key = node.dataset.bind;
+        const value = siteConfig.identity[key];
+        if (typeof value === 'string' && value.trim()) node.textContent = value.trim();
+      });
+      $('#currentYear').textContent = new Intl.NumberFormat('fa-IR').format(new Date().getFullYear());
+      const visibleIds = new Set(siteConfig.sections.filter(s => s.data).map(s => s.id));
+      $$('.nav-link').forEach(link => {
+        const id = link.getAttribute('href')?.slice(1);
+        if (!visibleIds.has(id) || !document.getElementById(id)) link.closest('li')?.remove();
+      });
+    }
+
+    function setupTheme() {
+      const root = document.documentElement;
+      const button = $('#themeToggle');
+      const icon = $('#themeIcon');
+      const apply = theme => {
+        root.dataset.theme = theme;
+        const dark = theme === 'dark';
+        button.setAttribute('aria-label', dark ? 'تغییر به حالت روشن' : 'تغییر به حالت تاریک');
+        button.title = dark ? 'حالت روشن' : 'حالت تاریک';
+        icon.innerHTML = dark
+          ? '<path d="M20.2 15.2A8.5 8.5 0 0 1 8.8 3.8 8.6 8.6 0 1 0 20.2 15.2Z"/>'
+          : '<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/>';
+        const themeColor = $('meta[name="theme-color"]');
+        themeColor?.setAttribute('content', dark ? '#17151d' : '#f8f7fb');
+      };
+      apply(root.dataset.theme === 'dark' ? 'dark' : 'light');
+      button.addEventListener('click', () => {
+        const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        apply(next);
+        try { localStorage.setItem(siteConfig.theme.storageKey, next); } catch (_) { /* ذخیره‌سازی در دسترس نیست؛ پوستهٔ جاری حفظ می‌شود. */ }
+        requestCanvasRender();
+      });
+    }
+
+    function setupNavigation() {
+      const header = $('#siteHeader');
+      const menu = $('#menuToggle');
+      const nav = $('#primaryNav');
+      const closeMenu = () => {
+        header.classList.remove('menu-open');
+        menu.setAttribute('aria-expanded', 'false');
+        menu.setAttribute('aria-label', 'بازکردن منو');
+      };
+      menu.addEventListener('click', () => {
+        const open = menu.getAttribute('aria-expanded') !== 'true';
+        header.classList.toggle('menu-open', open);
+        menu.setAttribute('aria-expanded', String(open));
+        menu.setAttribute('aria-label', open ? 'بستن منو' : 'بازکردن منو');
+      });
+      nav.addEventListener('click', event => {
+        if (event.target.closest('a')) closeMenu();
+      });
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && header.classList.contains('menu-open')) {
+          closeMenu();
+          menu.focus();
+        }
+      });
+      window.addEventListener('resize', () => { if (window.innerWidth > 760) closeMenu(); }, { passive: true });
+      const links = $$('.nav-link');
+      const sections = links.map(link => document.getElementById(link.hash.slice(1))).filter(Boolean);
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            links.forEach(link => {
+              if (link.hash === `#${entry.target.id}`) link.setAttribute('aria-current', 'location');
+              else link.removeAttribute('aria-current');
+            });
+          });
+        }, { rootMargin: '-25% 0px -60% 0px', threshold: 0 });
+        sections.forEach(section => observer.observe(section));
+      }
+    }
+
+    function setupReveal() {
+      document.documentElement.classList.add('js-ready');
+      const nodes = $$('[data-reveal]');
+      if (!('IntersectionObserver' in window) || prefersReducedMotion.matches) {
+        nodes.forEach(node => node.classList.add('is-revealed'));
+        return;
+      }
+      nodes.forEach(node => node.classList.add('is-pending'));
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.remove('is-pending');
+          entry.target.classList.add('is-revealed');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: .12, rootMargin: '0px 0px -35px 0px' });
+      nodes.forEach(node => observer.observe(node));
+    }
+
+    function setupScrollControls() {
+      const header = $('#siteHeader');
+      const progress = $('#scrollProgress');
+      const topButton = $('#backToTop');
+      let ticking = false;
+      const update = () => {
+        const y = window.scrollY || 0;
+        const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+        progress.style.transform = `scaleX(${Math.min(1, Math.max(0, y / max))})`;
+        header.classList.toggle('is-scrolled', y > 12);
+        topButton.classList.toggle('is-visible', y > 420);
+        ticking = false;
+      };
+      const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll, { passive: true });
+      update();
+      topButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: prefersReducedMotion.matches ? 'auto' : 'smooth' }));
+    }
+
+    // توالی تصاویر Canvas: با تکمیل نام واقعی اولین و آخرین فایل فعال می‌شود؛ بدون فایل، fallback هندسی بسیار سبک می‌ماند.
+    const canvas = $('#heroCanvas');
+    const ctx = canvas.getContext('2d', { alpha: true });
+    const sequenceState = { paths: [], images: new Map(), failed: new Set(), target: 0, current: 0, width: 0, height: 0, dpr: 1, raf: 0, activeImage: null, reducedIndex: 0 };
+
+    function extractSequence() {
+      const cfg = siteConfig.hero.sequence;
+      if (Array.isArray(cfg.files) && cfg.files.length) return cfg.files.filter(file => typeof file === 'string' && file.trim()).map(file => cfg.directory + file.trim());
+      if (!cfg.firstFile || !cfg.lastFile) return [];
+      const first = cfg.firstFile.match(/^(.*?)(\d+)(\.[^.]+)$/);
+      const last = cfg.lastFile.match(/^(.*?)(\d+)(\.[^.]+)$/);
+      if (!first || !last || first[1] !== last[1] || first[3].toLowerCase() !== last[3].toLowerCase()) return [];
+      const start = Number(first[2]);
+      const end = Number(last[2]);
+      if (!Number.isSafeInteger(start) || !Number.isSafeInteger(end) || end < start || end - start > 1200) return [];
+      const digits = Math.max(first[2].length, last[2].length, Number.isInteger(cfg.digits) ? cfg.digits : 0);
+      cfg.startNumber = start;
+      cfg.endNumber = end;
+      cfg.digits = digits;
+      cfg.format = first[3].slice(1);
+      const files = [];
+      for (let n = start; n <= end; n++) files.push(`${cfg.directory}${first[1]}${String(n).padStart(digits, '0')}${first[3]}`);
+      return files;
+    }
+
+    function setHeroScrollLength() {
+      const section = $('.hero');
+      const count = sequenceState.paths.length;
+      if (!count || prefersReducedMotion.matches) {
+        section.style.minHeight = '100svh';
+        return;
+      }
+      const distance = Math.min(siteConfig.animation.maxSequenceScroll, Math.max(siteConfig.animation.minSequenceScroll, count * siteConfig.animation.scrollDistancePerFrame));
+      section.style.minHeight = `calc(100svh + ${distance}px)`;
+    }
+
+    function resizeCanvas() {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.7);
+      sequenceState.width = Math.max(1, rect.width);
+      sequenceState.height = Math.max(1, rect.height);
+      sequenceState.dpr = dpr;
+      canvas.width = Math.round(sequenceState.width * dpr);
+      canvas.height = Math.round(sequenceState.height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      requestCanvasRender();
+    }
+
+    function drawFallback() {
+      const { width: w, height: h } = sequenceState;
+      if (!w || !h) return;
+      ctx.clearRect(0, 0, w, h);
+      const dark = document.documentElement.dataset.theme === 'dark';
+      const stroke = dark ? 'rgba(190,170,225,.11)' : 'rgba(112,87,154,.11)';
+      const accent = dark ? 'rgba(190,170,225,.17)' : 'rgba(112,87,154,.16)';
+      const cx = w * (w < 700 ? .84 : .73), cy = h * .49;
+      const radius = Math.min(w, h) * (w < 700 ? .31 : .34);
+      ctx.save();
+      ctx.strokeStyle = stroke; ctx.lineWidth = 1;
+      for (let i = 0; i < 5; i++) {
+        ctx.beginPath(); ctx.arc(cx, cy, radius * (.36 + i * .16), 0, Math.PI * 2); ctx.stroke();
+      }
+      ctx.setLineDash([3, 9]);
+      ctx.beginPath(); ctx.arc(cx, cy, radius * 1.15, 0, Math.PI * 2); ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.strokeStyle = accent;
+      const grid = 34;
+      const gx = w * .64, gy = h * .19, gw = Math.min(w * .27, 330), gh = Math.min(h * .64, 470);
+      for (let x = gx; x < gx + gw; x += grid) { ctx.beginPath(); ctx.moveTo(x, gy); ctx.lineTo(x, gy + gh); ctx.stroke(); }
+      for (let y = gy; y < gy + gh; y += grid) { ctx.beginPath(); ctx.moveTo(gx, y); ctx.lineTo(gx + gw, y); ctx.stroke(); }
+      ctx.fillStyle = accent;
+      [[cx, cy, 5], [gx + gw * .58, gy + gh * .32, 3], [gx + gw * .24, gy + gh * .72, 3]].forEach(([x, y, r]) => { ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill(); });
+      ctx.restore();
+    }
+
+    function drawCover(image) {
+      const w = sequenceState.width, h = sequenceState.height;
+      if (!w || !h) return;
+      const scale = Math.max(w / image.naturalWidth, h / image.naturalHeight);
+      const sw = w / scale, sh = h / scale;
+      // Crop is centered; the source aspect ratio remains intact (no stretching).
+      const sx = (image.naturalWidth - sw) / 2, sy = (image.naturalHeight - sh) / 2;
+      ctx.clearRect(0, 0, w, h);
+      ctx.drawImage(image, sx, sy, sw, sh, 0, 0, w, h);
+    }
+
+    function pruneImageCache(keepIndex) {
+      const max = siteConfig.animation.cacheLimit;
+      if (sequenceState.images.size <= max) return;
+      const entries = [...sequenceState.images.entries()].sort((a, b) => Math.abs(b[0] - keepIndex) - Math.abs(a[0] - keepIndex));
+      while (sequenceState.images.size > max) {
+        const [idx, img] = entries.shift();
+        if (!img) break;
+        if (img === sequenceState.activeImage) continue;
+        img.onload = null; img.onerror = null; img.src = '';
+        sequenceState.images.delete(idx);
+      }
+    }
+
+    function loadFrame(index) {
+      if (index < 0 || index >= sequenceState.paths.length || sequenceState.failed.has(index)) return;
+      const existing = sequenceState.images.get(index);
+      if (existing) {
+        if (existing.complete && existing.naturalWidth) {
+          sequenceState.activeImage = existing;
+          requestCanvasRender();
+        }
+        return;
+      }
+      const image = new Image();
+      sequenceState.images.set(index, image);
+      image.decoding = 'async';
+      image.onload = () => {
+        if (image.decode) image.decode().catch(() => {}).finally(() => {
+          if (index === Math.round(sequenceState.target)) { sequenceState.activeImage = image; requestCanvasRender(); }
+        });
+        else if (index === Math.round(sequenceState.target)) { sequenceState.activeImage = image; requestCanvasRender(); }
+        pruneImageCache(Math.round(sequenceState.target));
+      };
+      image.onerror = () => {
+        sequenceState.failed.add(index);
+        sequenceState.images.delete(index);
+        // A missing frame is skipped. The closest already-loaded image remains visible.
+        if (index === Math.round(sequenceState.target)) loadNearestAvailable(index);
+      };
+      image.src = sequenceState.paths[index];
+    }
+
+    function loadNearestAvailable(index) {
+      for (let radius = 1; radius < sequenceState.paths.length; radius++) {
+        const candidates = [index - radius, index + radius].filter(i => i >= 0 && i < sequenceState.paths.length && !sequenceState.failed.has(i));
+        if (candidates.length) { loadFrame(candidates[0]); return; }
+      }
+      requestCanvasRender();
+    }
+
+    function requestCanvasRender() {
+      if (sequenceState.raf) return;
+      sequenceState.raf = requestAnimationFrame(renderCanvas);
+    }
+
+    function renderCanvas() {
+      sequenceState.raf = 0;
+      if (!sequenceState.paths.length) { drawFallback(); return; }
+      const image = sequenceState.activeImage;
+      if (image?.complete && image.naturalWidth) drawCover(image);
+      else drawFallback();
+    }
+
+    function onHeroScroll() {
+      if (!sequenceState.paths.length || prefersReducedMotion.matches) return;
+      const hero = $('.hero');
+      const rect = hero.getBoundingClientRect();
+      const travel = Math.max(1, hero.offsetHeight - window.innerHeight);
+      const progress = Math.min(1, Math.max(0, -rect.top / travel));
+      sequenceState.target = progress * (sequenceState.paths.length - 1);
+      const nearest = Math.round(sequenceState.target);
+      const current = sequenceState.images.get(nearest);
+      if (current?.complete && current.naturalWidth) sequenceState.activeImage = current;
+      else loadFrame(nearest);
+      // Small, bounded neighbor window supports reverse scrolling without mass preloading.
+      for (const neighbor of [nearest - 1, nearest + 1]) if (neighbor >= 0 && neighbor < sequenceState.paths.length) loadFrame(neighbor);
+      if (sequenceState.activeImage) requestCanvasRender();
+    }
+
+    function setupHeroSequence() {
+      sequenceState.paths = extractSequence();
+      setHeroScrollLength();
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas, { passive: true });
+      if (sequenceState.paths.length) {
+        const middle = Math.floor((sequenceState.paths.length - 1) / 2);
+        sequenceState.reducedIndex = middle;
+        if (prefersReducedMotion.matches) {
+          loadFrame(middle);
+        } else {
+          loadFrame(0);
+          let scrollTick = false;
+          window.addEventListener('scroll', () => {
+            if (!scrollTick) { scrollTick = true; requestAnimationFrame(() => { scrollTick = false; onHeroScroll(); }); }
+          }, { passive: true });
+          onHeroScroll();
+        }
+      }
+      prefersReducedMotion.addEventListener?.('change', () => {
+        setHeroScrollLength();
+        if (prefersReducedMotion.matches && sequenceState.paths.length) loadFrame(sequenceState.reducedIndex);
+        else onHeroScroll();
+      });
+    }
+
+    bindSiteData();
+    setupTheme();
+    setupNavigation();
+    setupReveal();
+    setupScrollControls();
+    setupHeroSequence();
+  </script>
+</body>
+</html>
